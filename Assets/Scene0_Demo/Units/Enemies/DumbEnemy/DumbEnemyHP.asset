@@ -8,11 +8,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7be247ed6975d064884eba0a3f9234eb, type: 3}
-  m_Name: DummyEnemy
+  m_Script: {fileID: 11500000, guid: 3db4cbfaf000bb0468ccd711891451d7, type: 3}
+  m_Name: DumbEnemyHP
   m_EditorClassIdentifier: 
-  HP:
-    UseConstant: 0
-    ConstantValue: 0
-    Variable: {fileID: 0}
-  Name: {fileID: 0}
+  DeveloperDescription: Current Dumb Enemy HP
+  Value: 0

@@ -8,8 +8,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3db4cbfaf000bb0468ccd711891451d7, type: 3}
-  m_Name: DummyEnemyMaxHP
+  m_Script: {fileID: 11500000, guid: 84ba5d4ffc03d3f488c224392e820e8f, type: 3}
+  m_Name: Enemy
   m_EditorClassIdentifier: 
-  DeveloperDescription: 
-  Value: 0
+  InjuredBy:
+  - {fileID: 11400000, guid: 7f3103b0f14cb6a44976d5b3a30100da, type: 2}
+  AdvantageOver: []

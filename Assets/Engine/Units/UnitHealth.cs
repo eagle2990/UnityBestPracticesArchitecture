@@ -7,16 +7,16 @@ namespace RealDreams.Studio.Engine
 {
 	public class UnitHealth : MonoBehaviour
 	{
-		public FloatVariable HP;
-		public FloatReference StartingHP;
+		public UnitData UnitBaseStats;
 		public UnityEvent DamageEvent;
 		public UnityEvent DeathEvent;
 
 		void Start()
 		{
-			if (HP.Value <= 0)
+
+			if (UnitBaseStats.HP.Value <= 0)
 			{
-				HP.SetValue(StartingHP.Value);
+				UnitBaseStats.HP.SetValue(UnitBaseStats.MaxHP.Value);
 			}
 		}
 	}
