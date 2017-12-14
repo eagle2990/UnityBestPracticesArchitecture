@@ -4,9 +4,9 @@ using UnityEngine;
 
 namespace RealDreams.Studio.Engine
 {
-	public class UnitData : ScriptableObject
+	public abstract class UnitData : ScriptableObject
 	{
-		public string Name;
+		public string Name = "Unit";
 		public FloatReference MaxHP;
 		public FloatReference MoveSpeed;
 		public FloatVariable HP;

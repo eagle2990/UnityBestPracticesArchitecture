@@ -21,8 +21,4 @@ MonoBehaviour:
     ConstantValue: 0
     Variable: {fileID: 0}
   HP: {fileID: 11400000, guid: 2911d91209ed969458b301f876f0a5d8, type: 2}
-  Damage:
-    UseConstant: 1
-    ConstantValue: 0
-    Variable: {fileID: 0}
   Type: {fileID: 11400000, guid: b27a2294d91c7cc4eb0dfdd0895f7571, type: 2}
