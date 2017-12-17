@@ -13,5 +13,14 @@ namespace RealDreams.Studio.Engine
 			get { return value; }
 			set { this.value = value; }
 		}
+
+		public StringVariable(string Input)
+		{
+			Value = Input;
+		}
+
+		public StringVariable()
+		{
+		}
 	}
 }
