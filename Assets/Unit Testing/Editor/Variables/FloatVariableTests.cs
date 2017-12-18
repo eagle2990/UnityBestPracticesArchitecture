@@ -10,7 +10,7 @@ public class FloatVariableTests {
 	[Test]
 	public void FloatVariableTest_AreTheSameValue() {
 		float expected = 123f;
-		FloatVariable actual = new FloatVariable();
+		FloatVariable actual = ScriptableObject.CreateInstance<FloatVariable>();
 		actual.SetValue(123f);
 		Assert.AreEqual(expected, actual.Value);
 	}
@@ -19,7 +19,7 @@ public class FloatVariableTests {
 	public void FloatVariableTest_AreDifferentValues()
 	{
 		float expected = 123f;
-		FloatVariable actual = new FloatVariable();
+		FloatVariable actual = ScriptableObject.CreateInstance<FloatVariable>();
 		actual.SetValue(4f);
 		Assert.AreNotSame(expected, actual.Value);
 	}
@@ -28,7 +28,7 @@ public class FloatVariableTests {
 	public void FloatVariableTest_Adds()
 	{
 		float expected = 123f;
-		FloatVariable actual = new FloatVariable();
+		FloatVariable actual = ScriptableObject.CreateInstance<FloatVariable>();
 		actual.Add(123f);
 		Assert.AreEqual(expected, actual.Value);
 	}
@@ -37,7 +37,7 @@ public class FloatVariableTests {
 	public void FloatVariableTest_Subtracts()
 	{
 		float expected = -123f;
-		FloatVariable actual = new FloatVariable();
+		FloatVariable actual = ScriptableObject.CreateInstance<FloatVariable>();
 		actual.Add(-123f);
 		Assert.AreEqual(expected, actual.Value);
 	}

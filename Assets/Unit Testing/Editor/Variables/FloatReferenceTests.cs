@@ -26,12 +26,12 @@ public class FloatReferenceTests {
 	[Test]
 	public void FloatReferenceTest_FloatVariableIsTheSameValue()
 	{
-		FloatVariable expected = new FloatVariable();
+		FloatVariable expected = ScriptableObject.CreateInstance<FloatVariable>();
 		expected.SetValue(123f);
 
 		FloatReference actual = new FloatReference();
 		actual.UseConstant = false;
-		actual.Variable = new FloatVariable();
+		actual.Variable = ScriptableObject.CreateInstance<FloatVariable>();
 		actual.Variable.SetValue(123f);
 
 		Assert.IsFalse(actual.UseConstant);
@@ -44,7 +44,7 @@ public class FloatReferenceTests {
 	{
 		FloatReference actual = new FloatReference();
 		actual.UseConstant = false;
-		actual.Variable = new FloatVariable();
+		actual.Variable = ScriptableObject.CreateInstance<FloatVariable>();
 		actual.Variable.SetValue(123f);
 
 		Assert.IsFalse(actual.UseConstant);
