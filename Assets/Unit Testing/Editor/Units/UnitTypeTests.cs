@@ -1,22 +1,53 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEditor;
 using UnityEngine.TestTools;
 using NUnit.Framework;
 using System.Collections;
+using RealDreams.Studio.Engine;
 
 public class UnitTypeTests {
 
-	[Test]
-	public void UnitTypeTestsSimplePasses() {
-		// Use the Assert class to test conditions.
+	UnitType water;
+	UnitType fire;
+	UnitType grass;
+
+	[OneTimeSetUp]
+	public void Init()
+	{
+		water = ScriptableObject.CreateInstance<UnitType>();
+		fire = ScriptableObject.CreateInstance<UnitType>();
+		grass = ScriptableObject.CreateInstance<UnitType>();
+
+		water.InjuredBy.Add(grass);
+		water.AdvantageOver.Add(fire);
+
+		fire.InjuredBy.Add(water);
+		fire.AdvantageOver.Add(grass);
+
+		grass.InjuredBy.Add(fire);
+		grass.AdvantageOver.Add(water);
 	}
 
-	// A UnityTest behaves like a coroutine in PlayMode
-	// and allows you to yield null to skip a frame in EditMode
-	[UnityTest]
-	public IEnumerator UnitTypeTestsWithEnumeratorPasses() {
-		// Use the Assert class to test conditions.
-		// yield to skip a frame
-		yield return null;
+	[Test]
+	public void UnitTypeTest_IsInjuredBy() {
+		Assert.IsTrue(fire.IsInjuredBy(water));
+	}
+
+	[Test]
+	public void UnitTypeTest_HasAdvantageOver()
+	{
+		Assert.IsTrue(fire.HasAdvantageOver(grass));
+	}
+
+	[Test]
+	public void UnitTypeTest_IsNotInjuredBy()
+	{
+		Assert.IsFalse(fire.IsInjuredBy(grass));
+	}
+
+	[Test]
+	public void UnitTypeTest_HasNotAdvantageOver()
+	{
+		Assert.IsFalse(fire.HasAdvantageOver(water));
 	}
 }
