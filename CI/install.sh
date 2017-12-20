@@ -10,7 +10,7 @@ check_file_exists_or_download() {
     then
         echo "File $1 exists so it's not neccesary to download"
     else
-        wget -O $1 $2
+        wget -q -O $1 $2
     fi
 }
 
