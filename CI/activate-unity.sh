@@ -9,6 +9,6 @@ $UNITY_INSTALLATION/Editor/Unity \
     -batchmode \
     -nographics \
     -serial $UNITY_SERIAL \
-    -username '$UNITY_USERNAME' \
-    -password '$UNITY_PASSWORD' \
+    -username $UNITY_USERNAME \
+    -password $UNITY_PASSWORD \
     -quit
