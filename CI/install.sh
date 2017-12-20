@@ -14,17 +14,17 @@ check_file_exists_or_download() {
     fi
 }
 
-UNITY_INSTALLER="Unity.sh"
+export UNITY_INSTALLER="Unity.sh"
 echo 'Downloading Unity Installer'
 if [ "$TRAVIS_OS_NAME" = "linux" ]
 then
-    UNITY_INSTALLER="Unity.sh"
+    export UNITY_INSTALLER="Unity.sh"
     check_file_exists_or_download $UNITY_INSTALLER $UNITY_LINUX_DOWNLOAD
-    echo 'Installing $UNITY_INSTALLER for Linux'
+    echo 'Installing $UNITY_INSTALLER for Linux in $UNITY_ROOT_PATH'
     sudo chmod +x $UNITY_INSTALLER
     sudo echo | sudo ./$UNITY_INSTALLER -o $UNITY_ROOT_PATH
 else
-    UNITY_INSTALLER="Unity.pkg"
+    export UNITY_INSTALLER="Unity.pkg"
     check_file_exists_or_download $UNITY_INSTALLER $UNITY_MACOS_DOWNLOAD
     echo 'Installing $UNITY_INSTALLER for MacOS'
     sudo installer -dumplog -package $UNITY_INSTALLER -target $UNITY_ROOT_PATH
