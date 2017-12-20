@@ -1,4 +1,3 @@
-using UnityEditor;
 using UnityEngine;
 
 namespace RealDreams.Studio.Engine
@@ -14,7 +13,7 @@ namespace RealDreams.Studio.Engine
 		public static void CreateAsset<T>() where T : ScriptableObject
 		{
 			var asset = ScriptableObject.CreateInstance<T>();
-			ProjectWindowUtil.CreateAsset(asset, "New " + typeof(T).Name + ".asset");
+			//ProjectWindowUtil.CreateAsset(asset, "New " + typeof(T).Name + ".asset");
 		}
 	}
 }
