@@ -6,6 +6,7 @@ before_install:
 
 install:
   - travis_wait ./CI/install.sh
+  - ./CI/activate-unity.sh
 
 script:
   - ./CI/editor-tests.sh

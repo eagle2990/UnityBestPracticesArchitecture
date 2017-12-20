@@ -3,7 +3,7 @@
 # Command-line to build project finding the Unity3d Installation Path, saving it in a variable
 # and building for Windows
 
-UNITY_INSTALLATION=$(find / -mindepth 1 -maxdepth 1 -type d -name "unity*")
+export UNITY_INSTALLATION=$(find / -mindepth 1 -maxdepth 1 -type d -name "unity*")
 
 echo "Attempting to build $UNITY_PROJECT"
 $UNITY_INSTALLATION/Editor/Unity \

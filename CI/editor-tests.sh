@@ -2,7 +2,7 @@
 
 # Script to run Editor Tests, finding the installation path of Unity3D
 
-UNITY_INSTALLATION=$(find / -mindepth 1 -maxdepth 1 -type d -name "unity*")
+export UNITY_INSTALLATION=$(find / -mindepth 1 -maxdepth 1 -type d -name "unity*")
 
 echo "Running tests of $UNITY_PROJECT"
 $UNITY_INSTALLATION/Editor/Unity \
