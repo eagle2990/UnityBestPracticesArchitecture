@@ -1,5 +1,10 @@
 language: c#
+install:
+- ./CI/install.sh
+script:
+- ./CI/editor-tests.sh
+- ./CI/build-win.sh
 env:
-  - UNITY_LINUX_DOWNLOAD=http://beta.unity3d.com/download/ee86734cf592/unity-editor-installer-2017.2.0f3.sh
-  - UNITY_MACOS_DOWNLOAD=https://download.unity3d.com/download_unity/46dda1414e51/MacEditorInstaller/Unity-2017.2.0f3.pkg
-  - UNITY_ROOT_PATH=/
+- UNITY_LINUX_DOWNLOAD=http://beta.unity3d.com/download/ee86734cf592/unity-editor-installer-2017.2.0f3.sh
+- UNITY_MACOS_DOWNLOAD=https://download.unity3d.com/download_unity/46dda1414e51/MacEditorInstaller/Unity-2017.2.0f3.pkg
+- UNITY_ROOT_PATH=/
