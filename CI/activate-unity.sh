@@ -8,6 +8,7 @@ echo "Activating UNITY"
 $UNITY_INSTALLATION/Editor/Unity \
     -batchmode \
     -nographics \
+    -logFile "$(pwd)/unity-activate.log" \
     -serial $UNITY_SERIAL \
     -username $UNITY_USERNAME \
     -password $UNITY_PASSWORD \
