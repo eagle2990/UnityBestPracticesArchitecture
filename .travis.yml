@@ -1,4 +1,5 @@
-language: c#
+language: csharp
+sudo: required
 install:
 - ./CI/install.sh
 script:
