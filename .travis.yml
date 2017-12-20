@@ -5,7 +5,7 @@ before_install:
   - chmod a+x ./CI/*
 
 install:
-  - ./CI/install.sh
+  - travis_wait ./CI/install.sh
 
 script:
   - ./CI/editor-tests.sh

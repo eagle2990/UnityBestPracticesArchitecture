@@ -9,7 +9,6 @@ echo "Attempting to build $UNITY_PROJECT"
 $UNITY_INSTALLATION/Editor/Unity \
     -batchmode \
     -nographics \
-    -silent-crashes \
     -logFile "$(pwd)/unity.log" \
     -projectPath "$(pwd)" \
     -buildWindowsPlayer "$(pwd)/Build/$UNITY_PROJECT.exe" \
