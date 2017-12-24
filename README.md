@@ -6,10 +6,7 @@ This project is an experiment trying to achieve best practices in Unity, while a
 ---
 ## Table of Contents
 
-    1. Goals
-    2. FAQ
-    3. Contribution
-    4. Licensing
+    [TOC]
 
 ---
 ## Goals
@@ -19,6 +16,11 @@ This project is an experiment trying to achieve best practices in Unity, while a
 3. Setup CI.
 4. Optimize scene for VR.
 5. Create an AI using ML.
+
+## Takeaways
+
+1. Editor tests should be focused in objects that **DON'T** require MonoBehaviour methods (like Start, Update), while Play tests are the opposite.
+2. Activating Unity through command-line is almost impossible as it requires to accept their terms and conditions, which currently there is no option for that. I will be still searching, but so far I think I will require a dedicated server for CI/CD.
 
 ## FAQ
 
