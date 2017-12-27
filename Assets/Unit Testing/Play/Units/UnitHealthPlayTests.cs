@@ -7,10 +7,12 @@ using System;
 
 public class UnitHealthPlayTests {
 
+	GameObject PlayerPrefab;
+	GameObject EnemyPrefab;
+
 	GameObject bot;
 	UnitData botStats;
 	FloatVariable botHP;
-	UnitHealth botHealthBehaviour;
 
 	GameObject enemy;
 	EnemyData enemyStats;
@@ -18,22 +20,23 @@ public class UnitHealthPlayTests {
 	[OneTimeSetUp]
 	public void Init()
 	{
-		botHP = ScriptableObject.CreateInstance<FloatVariable>();
+		PlayerPrefab = Resources.Load<GameObject>("Player");
+		EnemyPrefab = Resources.Load<GameObject>("DumbEnemy");
 
-		botStats = ScriptableObject.CreateInstance<PlayerData>();
-		botStats.MaxHP = new FloatReference(120f);
-		botStats.HP = botHP;
+		//botHP = ScriptableObject.CreateInstance<FloatVariable>();
 
-		bot = new GameObject();
-		bot.AddComponent<UnitHealth>();
-		botHealthBehaviour = bot.GetComponent<UnitHealth>();
-		botHealthBehaviour.BaseStats = botStats;
+		//botStats = ScriptableObject.CreateInstance<PlayerData>();
+		//botStats.MaxHP = new FloatReference(120f);
+		//botStats.HP = botHP;
+
+		bot = CreateGameObject(PlayerPrefab, botStats);
 	}
 
 	[UnityTest]
 	public IEnumerator UnitHealtTest_StartsWithMaxHP() {
 		yield return null;
-		Assert.AreEqual(botStats.MaxHP.Value, botHP.Value);
+		botStats = bot.GetComponent<UnitHealth>().BaseStats;
+		Assert.AreEqual(botStats.MaxHP.Value, botStats.HP.Value);
 	}
 
 	[Test]
@@ -52,5 +55,13 @@ public class UnitHealthPlayTests {
 	public void UnitHealtTest_DamageEventInvoked()
 	{
 		throw new NotImplementedException();
+	}
+
+	private GameObject CreateGameObject(GameObject prefab, UnitData stats)
+	{
+		GameObject character = GameObject.Instantiate(prefab);
+		//UnitHealth health = character.GetComponent<UnitHealth>();
+		//health.BaseStats = stats;
+		return character;
 	}
 }

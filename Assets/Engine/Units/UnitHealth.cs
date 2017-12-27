@@ -6,13 +6,14 @@ namespace RealDreams.Studio.Engine
 	public class UnitHealth : MonoBehaviour
 	{
 		public UnitData BaseStats;
+		public bool RestartHP;
 		public UnityEvent DamageEvent;
 		public UnityEvent DeathEvent;
-
+		
 		void Start()
 		{
 
-			if (BaseStats.HP.Value <= 0)
+			if (BaseStats.HP.Value <= 0 || RestartHP)
 			{
 				BaseStats.HP.SetValue(BaseStats.MaxHP.Value);
 			}
@@ -20,14 +21,21 @@ namespace RealDreams.Studio.Engine
 
 		private void OnTriggerEnter(Collider other)
 		{
-			DamageDealer damage = other.gameObject.GetComponent<DamageDealer>();
+			DamageDealer damage = GetDamageDealer(other.gameObject);
 			CalculateDamage(damage, other.gameObject);
+			CheckDeath();
+		}
+
+		private void OnCollisionEnter(Collision collision)
+		{
+			DamageDealer damage = GetDamageDealer(collision.gameObject);
+			CalculateDamage(damage, collision.gameObject);
 			CheckDeath();
 		}
 
 		private UnitType GetCollidedUnitType(GameObject other)
 		{
-			UnitHealth unitHealth = other.GetComponent<UnitHealth>();
+			UnitHealth unitHealth = other.GetComponent<UnitHealth>() ?? other.GetComponentInParent<UnitHealth>();
 			if (unitHealth != null)
 			{
 				return unitHealth.BaseStats.Type;
@@ -64,6 +72,12 @@ namespace RealDreams.Studio.Engine
 		{
 			BaseStats.HP.Add(-amount);
 			DamageEvent.Invoke();
+		}
+
+		private DamageDealer GetDamageDealer(GameObject prefab)
+		{
+			DamageDealer damage = prefab.GetComponent<DamageDealer>() ?? prefab.GetComponentInParent<DamageDealer>();
+			return damage;
 		}
 	}
 }

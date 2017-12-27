@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85bf55b08fa54e54c99cd25ed8ff9dcd, type: 3}
+  m_Name: PlayerData
+  m_EditorClassIdentifier: 
+  Name: Player
+  MaxHP:
+    UseConstant: 1
+    ConstantValue: 100
+    Variable: {fileID: 0}
+  MoveSpeed:
+    UseConstant: 1
+    ConstantValue: 0.3
+    Variable: {fileID: 0}
+  HP: {fileID: 11400000, guid: d51a34f21e2a4294b9a21314ca4b5097, type: 2}
+  Type: {fileID: 11400000, guid: 7f3103b0f14cb6a44976d5b3a30100da, type: 2}
