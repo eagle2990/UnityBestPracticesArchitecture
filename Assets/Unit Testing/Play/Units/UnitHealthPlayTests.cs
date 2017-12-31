@@ -20,8 +20,8 @@ public class UnitHealthPlayTests {
 	[OneTimeSetUp]
 	public void Init()
 	{
-		PlayerPrefab = Resources.Load<GameObject>("Player");
-		EnemyPrefab = Resources.Load<GameObject>("DumbEnemy");
+		PlayerPrefab = Resources.Load<GameObject>("Units/Player/Player");
+		EnemyPrefab = Resources.Load<GameObject>("Units/Enemies/DumbEnemy/DumbEnemy");
 
 		//botHP = ScriptableObject.CreateInstance<FloatVariable>();
 
