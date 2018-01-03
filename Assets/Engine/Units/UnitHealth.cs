@@ -21,15 +21,18 @@ namespace RealDreams.Studio.Engine
 
 		private void OnTriggerEnter(Collider other)
 		{
-			DamageDealer damage = GetDamageDealer(other.gameObject);
-			CalculateDamage(damage, other.gameObject);
-			CheckDeath();
+			GotHitBy(other.gameObject);
 		}
 
 		private void OnCollisionEnter(Collision collision)
 		{
-			DamageDealer damage = GetDamageDealer(collision.gameObject);
-			CalculateDamage(damage, collision.gameObject);
+			GotHitBy(collision.gameObject);
+		}
+
+		private void GotHitBy(GameObject other)
+		{
+			DamageDealer damage = GetDamageDealer(other);
+			CalculateDamage(damage, other);
 			CheckDeath();
 		}
 
@@ -79,5 +82,7 @@ namespace RealDreams.Studio.Engine
 			DamageDealer damage = prefab.GetComponent<DamageDealer>() ?? prefab.GetComponentInParent<DamageDealer>();
 			return damage;
 		}
+
+		
 	}
 }
