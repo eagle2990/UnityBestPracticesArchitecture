@@ -5,11 +5,9 @@ This project is an experiment trying to achieve best practices in Unity, while a
 
 ---
 
-Table of Contents
-=================
+## Table of Contents
 
    * [Unity VR / ML Agents / CI Experiment](#unity-vr--ml-agents--ci-experiment)
-      * [Table of Contents](#table-of-contents)
       * [Goals](#goals)
       * [Takeaways](#takeaways)
       * [FAQ](#faq)
