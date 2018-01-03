@@ -1,13 +1,22 @@
 # Unity VR / ML Agents / CI Experiment 
 [![liberapay](https://liberapay.com/assets/widgets/donate.svg)](https://liberapay.com/eagle2990/donate)
 
-This project is an experiment trying to achieve best practices in Unity, while also practicing/learning new skills like Machine Learning, ScriptableObjects and Continuous Integration using Travis CI.
+This project is an experiment trying to achieve best practices in Unity, while also practicing/learning new skills like Machine Learning, ScriptableObjects and Continuous Integration.
 
 ---
-## Table of Contents
 
-    [TOC]
+Table of Contents
+=================
 
+   * [Unity VR / ML Agents / CI Experiment](#unity-vr--ml-agents--ci-experiment)
+      * [Table of Contents](#table-of-contents)
+      * [Goals](#goals)
+      * [Takeaways](#takeaways)
+      * [FAQ](#faq)
+         * [Which Unity version is supported?](#which-unity-version-is-supported)
+         * [I have problems downloading the repository](#i-have-problems-downloading-the-repository)
+      * [Contribution](#contribution)
+      * [Licensing](#licensing)
 ---
 ## Goals
 
