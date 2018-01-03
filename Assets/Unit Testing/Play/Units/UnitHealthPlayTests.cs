@@ -20,17 +20,6 @@ public class UnitHealthPlayTests {
 		bot = CreateGameObject(PlayerPrefab);
 	}
 
-	void CreateEnemy()
-	{
-		EnemyPrefab = Resources.Load<GameObject>("Units/Enemies/DumbEnemy/DumbEnemy");
-		enemy = CreateGameObject(EnemyPrefab);
-	}
-
-	void CreatePlane()
-	{
-		GameObject.CreatePrimitive(PrimitiveType.Plane);
-	}
-
 	[UnityTest]
 	public IEnumerator UnitHealtTest_StartsWithMaxHP() {
 		yield return null;
@@ -41,14 +30,11 @@ public class UnitHealthPlayTests {
 	[UnityTest]
 	public IEnumerator UnitHealtTest_RecievesDamage()
 	{
-		//yield return null;
-		//CreatePlane();
-		//CreateEnemy();
-
-		//bot.transform.position = enemy.transform.position;
-		//UnitData enemyStats = enemy.GetComponent<UnitHealth>().BaseStats;
-		//Assert.AreNotEqual(enemyStats.MaxHP.Value, enemyStats.HP.Value);
-		throw new NotImplementedException();
+		CreateEnemy();
+		bot.transform.position = enemy.transform.position;
+		yield return null;
+		UnitData enemyStats = enemy.GetComponent<UnitHealth>().BaseStats;
+		Assert.AreNotEqual(enemyStats.MaxHP.Value, enemyStats.HP.Value);
 	}
 
 	[Test]
@@ -67,5 +53,11 @@ public class UnitHealthPlayTests {
 	{
 		GameObject character = GameObject.Instantiate(prefab);
 		return character;
+	}
+
+	private void CreateEnemy()
+	{
+		EnemyPrefab = Resources.Load<GameObject>("Units/Enemies/DumbEnemy/DumbEnemy");
+		enemy = CreateGameObject(EnemyPrefab);
 	}
 }
