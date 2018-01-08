@@ -35,7 +35,7 @@ This project is an experiment trying to achieve best practices in Unity, while a
 _Currently I'm working on **2017.2.0f3**_
 
 ### I have problems downloading the repository
-_The repository is using Git LFS, so it requires to be downloaded cloaning the repository using_ `git clone https://github.com/eagle2990/UnityMLAgents.git` _as the current_ **Download ZIP** _doesn't support LFS._
+_The repository is using Git LFS, so it requires to be downloaded cloning the repository using_ `git clone https://github.com/eagle2990/UnityMLAgents.git` _as the current_ **Download ZIP** _doesn't support LFS._
 
 ## Contribution
 _Just send me an email to eagle2990@gmail.com_

@@ -1,0 +1,1 @@
+"D:\Program Files\Unity 5.6.1p2\Editor\Unity.exe" -batchmode -nographics -logFile "%%cd%%\unity-build-windows.log" -projectPath "%%cd%%" -buildWindowsPlayer "%%cd%%/Build/%env.UNITY_PROJECT%.exe" -quit

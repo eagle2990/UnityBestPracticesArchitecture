@@ -1,0 +1,1 @@
+"D:\Program Files\Unity 5.6.1p2\Editor\Unity.exe" -batchmode -nographics -runTests -logFile "%%cd%%\unity-editor-tests.log" -projectPath "%%cd%%" -testResults "%%cd%%\editor-tests-results.xml" - testPlatform editmode
