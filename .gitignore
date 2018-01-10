@@ -35,3 +35,9 @@ sysinfo.txt
 .DS_Store
 
 #VR Assets Store files
+Assets/AmplifyShaderEditor/
+Assets/FogVolume/
+Assets/Plugins/VolumetricLightBeam/
+
+#Ignoring auto-generated test scenes
+InitTestScene*.unity*

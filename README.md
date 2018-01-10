@@ -9,6 +9,7 @@ This project is an experiment trying to achieve best practices in Unity, while a
 
    * [Unity VR / ML Agents / CI Experiment](#unity-vr--ml-agents--ci-experiment)
       * [Goals](#goals)
+      * [Dependancies](#dependancies)
       * [Takeaways](#takeaways)
       * [FAQ](#faq)
          * [Which Unity version is supported?](#which-unity-version-is-supported)
@@ -23,6 +24,14 @@ This project is an experiment trying to achieve best practices in Unity, while a
 3. Setup CI.
 4. Optimize scene for VR.
 5. Create an AI using ML.
+
+## Dependancies
+
+* Amplify Shader Editor
+* Fog Volume 3
+* Volumetric Light Beam
+
+I am not allowed to redistribute, so they will be removed from the repository.
 
 ## Takeaways
 
