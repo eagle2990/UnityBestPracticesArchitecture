@@ -38,6 +38,7 @@ sysinfo.txt
 Assets/AmplifyShaderEditor/
 Assets/FogVolume/
 Assets/Plugins/VolumetricLightBeam/
+Assets/Mundus*/
 
 #Ignoring auto-generated test scenes
 InitTestScene*.unity*
