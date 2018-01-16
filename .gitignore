@@ -38,7 +38,10 @@ sysinfo.txt
 Assets/AmplifyShaderEditor/
 Assets/FogVolume/
 Assets/Plugins/VolumetricLightBeam/
+Assets/Plugins/EModules/
 Assets/Mundus*/
+Assets/KriptoFX/
+Assets/UBER/
 
 #Ignoring auto-generated test scenes
 InitTestScene*.unity*
