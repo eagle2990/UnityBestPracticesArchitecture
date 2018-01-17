@@ -24,24 +24,13 @@ public class TrailManager : MonoBehaviour
 	{
 		if (Input.GetMouseButton(0))
 		{
-			if (thisTrail == null)
-			{
-				thisTrail = (GameObject)Instantiate(trailPrefab,
-												this.transform.position,
-												Quaternion.identity);
-			}
-
+			IfThereIsNoTrailCreate();
 			Ray mRay = Camera.main.ScreenPointToRay(Input.mousePosition);
 			float rayDistance;
 			if (plane.Raycast(mRay, out rayDistance))
 			{
 				thisTrail.transform.position = mRay.GetPoint(rayDistance);
-				if (startPos == Vector3.zero)
-				{
-					startPos = thisTrail.transform.position;
-				}
-
-				
+				IfThereIsNoStartPositionSave();
 			}
 		}
 
@@ -54,9 +43,27 @@ public class TrailManager : MonoBehaviour
 			else
 			{
 				startPos = Vector3.zero;
-				trails.Add(thisTrail);
 				thisTrail = null;
+				trails.Add(thisTrail);
 			}
+		}
+	}
+
+	private void IfThereIsNoTrailCreate()
+	{
+		if (thisTrail == null)
+		{
+			thisTrail = (GameObject)Instantiate(trailPrefab,
+											this.transform.position,
+											Quaternion.identity);
+		}
+	}
+
+	private void IfThereIsNoStartPositionSave()
+	{
+		if (startPos == Vector3.zero)
+		{
+			startPos = thisTrail.transform.position;
 		}
 	}
 }
